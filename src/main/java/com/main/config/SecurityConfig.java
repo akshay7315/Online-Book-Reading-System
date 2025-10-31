@@ -50,7 +50,6 @@ public class SecurityConfig {
         };
     }
 
-    // ✅ Spring Security setup
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -83,10 +82,10 @@ public class SecurityConfig {
                 User admin = new User();
                 admin.setUsername("admin");
                 admin.setPassword(encoder.encode("admin"));
-                admin.setRole("ADMIN"); // ⚠️ Do NOT add ROLE_ prefix here
+                admin.setRole("ADMIN"); 
                 userRepository.save(admin);
                 System.out.println("✅ Default admin created: username=admin, password=admin");
             }
         };
     }
-}
+}  
