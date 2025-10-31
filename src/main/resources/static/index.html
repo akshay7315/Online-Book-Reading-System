@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookVerse - Online Book Reader</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- Razorpay Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+	<!-- Header -->
+<header>
+  <nav class="navbar">
+    <div class="logo">📘 Readify</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="login.html" class="login-btn">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+	<!-- Home Section -->
+	<section id="home" class="section home">
+		<div class="home-content fade-up">
+			<h1>
+				Welcome to <span>BookVerse</span>
+			</h1>
+			<p>Read, Download, and Explore Thousands of Books Anytime,
+				Anywhere.</p>
+			<a href="#books" class="btn">Explore Books</a>
+		</div>
+	</section>
+
+	<!-- Books Section -->
+	<section id="books" class="section books">
+		<h2 class="fade-up">Our Book Collection</h2>
+		<p class="subtext fade-up">Browse our library — Free and Premium
+			Titles Await You!</p>
+		<div id="bookContainer" class="book-container fade-up"></div>
+		<div class="pagination fade-up">
+			<button id="prevBtn" class="page-btn">&laquo; Prev</button>
+			<div id="pageNumbers" class="page-numbers"></div>
+			<button id="nextBtn" class="page-btn">Next &raquo;</button>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="section about fade-up" id="about">
+  <h2>About Us</h2>
+  <p>
+    Welcome to our <span class="highlight">Online Book Store</span> — your one-stop destination for
+    exploring and purchasing your favorite books. We aim to make reading more accessible and enjoyable
+    for everyone.
+  </p>
+
+  <div class="about-cards">
+    <div class="about-card">
+      <i class="fas fa-book-open"></i>
+      <h3>Wide Collection</h3>
+      <p>We offer books from multiple genres — from fiction to self-help and technology.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-shipping-fast"></i>
+      <h3>Fast Delivery</h3>
+      <p>Get your favorite books delivered quickly and safely to your doorstep.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-smile"></i>
+      <h3>Customer Focused</h3>
+      <p>Our mission is to spread knowledge and happiness through reading.</p>
+    </div>
+  </div>
+</section>
+
+
+
+	<!-- Contact Section -->
+	<section id="contact" class="section contact fade-up">
+		<h2>Contact Us</h2>
+		<p>Have questions, feedback, or book requests? Fill out the form
+			below and we’ll get back to you promptly.</p>
+		<form id="contactForm">
+			<div class="form-group">
+				<label for="name">Full Name:</label> <input type="text" id="name"
+					name="name" placeholder="Your Name" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label> <input type="email" id="email"
+					name="email" placeholder="Your Email" required>
+			</div>
+			<div class="form-group">
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" rows="5"
+					placeholder="Your Message" required></textarea>
+			</div>
+			<button type="submit" class="btn">Send Message</button>
+		</form>
+		<p id="formStatus"></p>
+	</section>
+
+	<!-- Footer -->
+	<footer>
+		<p>© 2025 BookVerse. All rights reserved. | Designed with Akshay</p>
+	</footer>
+
+	<script src="Srcipt.js"></script>
+	<script src="https://unpkg.com/@studio-freight/lenis"></script>
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="/login" method="post">
+      <label>Username:</label>
+      <input type="text" name="username" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Spring Security will automatically show error or logout query params -->
+    <p style="color:red;">
+      <span>
+        <script>
+          if (window.location.search.includes('error')) {
+            document.write("Invalid username or password!");
+          } else if (window.location.search.includes('logout')) {
+            document.write("You have been logged out successfully.");
+          } else if (window.location.search.includes('success')) {
+            document.write("Registration successful! Please login.");
+          }
+        </script>
+      </span>
+    </p>
+
+    <p>Don’t have an account? <a href="/register.html">Register here</a></p>
+  </div>
+</body>
+</html>
