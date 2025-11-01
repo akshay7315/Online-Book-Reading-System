@@ -8,9 +8,6 @@ import com.main.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    // To find user by username
     Optional<User> findByUsername(String username);
-
-    // To check if a username already exists
     boolean existsByUsername(String username);
 }

@@ -14,13 +14,11 @@ public class UserAdminController {
     @Autowired
     private UserRepository userRepo;
 
-    // ✅ Get all users
     @GetMapping
     public List<User> getAllUsers() {
         return userRepo.findAll();
     }
 
-    // ✅ Delete a user by ID
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable Long id) {
         if (!userRepo.existsById(id)) {
@@ -30,7 +28,6 @@ public class UserAdminController {
         return "User deleted successfully";
     }
 
-    // ✅ Update user details (email, city, role, username if needed)
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         User user = userRepo.findById(id).orElseThrow(() -> new RuntimeException("User not found"));

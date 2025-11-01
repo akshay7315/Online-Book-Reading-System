@@ -1,4 +1,3 @@
-// 🌐 Fetch and display Contacts
 async function loadContacts() {
   const res = await fetch("http://localhost:8080/api/admin/contacts");
   const data = await res.json();
@@ -21,7 +20,6 @@ async function loadContacts() {
   });
 }
 
-// 🌐 Fetch and display Users
 async function loadUsers() {
   const res = await fetch("http://localhost:8080/api/admin/users");
   const data = await res.json();
@@ -45,7 +43,6 @@ async function loadUsers() {
   });
 }
 
-// ✏️ Update user
 async function updateUser(id) {
   const email = document.getElementById(`email-${id}`).value;
   const city = document.getElementById(`city-${id}`).value;
@@ -61,7 +58,6 @@ async function updateUser(id) {
   loadUsers();
 }
 
-// ❌ Delete user
 async function deleteUser(id) {
   if (confirm("Delete this user?")) {
     await fetch(`http://localhost:8080/api/admin/users/${id}`, { method: "DELETE" });
@@ -69,7 +65,6 @@ async function deleteUser(id) {
   }
 }
 
-// ✏️ Edit contact
 async function editContact(id) {
   const name = prompt("Enter new name:");
   const email = prompt("Enter new email:");
@@ -87,7 +82,6 @@ async function editContact(id) {
   loadContacts();
 }
 
-// ❌ Delete contact
 async function deleteContact(id) {
   if (confirm("Delete this contact?")) {
     await fetch(`http://localhost:8080/api/admin/contacts/${id}`, { method: "DELETE" });
@@ -95,7 +89,6 @@ async function deleteContact(id) {
   }
 }
 
-// 🧭 Section toggle
 function showSection(section) {
   document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
   document.getElementById(section).style.display = "block";
@@ -104,12 +97,10 @@ function showSection(section) {
   else loadUsers();
 }
 
-// 🚪 Logout
 function logout() {
   if (confirm("Are you sure you want to logout?")) {
     window.location.href = "login.html";
   }
 }
 
-// 🏁 Load contacts by default
 loadContacts();

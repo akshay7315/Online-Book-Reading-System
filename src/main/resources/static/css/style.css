@@ -81,7 +81,6 @@ header {
 	font-size: 1.2rem;
 }
 
-/* Buttons */
 .btn {
 	background: #ffb400;
 	padding: 10px 25px;
@@ -98,7 +97,6 @@ header {
 	transform: scale(1.05);
 }
 
-/* Sections */
 .section {
 	padding: 60px 8%;
 	text-align: center;
@@ -114,7 +112,6 @@ header {
 	color: #555;
 }
 
-/* Book Cards */
 .book-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -207,8 +204,7 @@ header {
 	color: white;
 }
 
-/* About & Contact */
-/* ===== About Section (Updated) ===== */
+
 .about {
 	background: linear-gradient(135deg, #fff, #fdf7e3);
 	border-radius: 15px;

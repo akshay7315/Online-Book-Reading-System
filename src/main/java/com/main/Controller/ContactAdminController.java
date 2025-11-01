@@ -13,13 +13,11 @@ public class ContactAdminController {
     @Autowired
     private com.main.repo.contactRepo contactRepo;
 
-    // ✅ Get all contacts
     @GetMapping
     public List<Contact> getAllContacts() {
         return contactRepo.findAll();
     }
 
-    // ✅ Delete a contact by ID
     @DeleteMapping("/{id}")
     public String deleteContact(@PathVariable int id) {
         if (!contactRepo.existsById(id)) {
@@ -29,7 +27,6 @@ public class ContactAdminController {
         return "Contact deleted successfully";
     }
 
-    // ✅ Update contact info
     @PutMapping("/{id}")
     public Contact updateContact(@PathVariable int id, @RequestBody Contact updated) {
         Contact contact = contactRepo.findById(id)

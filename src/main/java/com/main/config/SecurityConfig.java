@@ -35,7 +35,6 @@ public class SecurityConfig {
         return provider;
     }
 
-    // ✅ Handles login success: redirects ADMIN → admin.html, USER → index.html
     @Bean
     public AuthenticationSuccessHandler successHandler() {
         return (HttpServletRequest request, HttpServletResponse response, Authentication authentication) -> {
@@ -74,7 +73,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // ✅ Create default admin at startup (only once)
     @Bean
     public CommandLineRunner createDefaultAdmin(UserRepository userRepository, PasswordEncoder encoder) {
         return args -> {
@@ -84,7 +82,6 @@ public class SecurityConfig {
                 admin.setPassword(encoder.encode("admin"));
                 admin.setRole("ADMIN"); 
                 userRepository.save(admin);
-                System.out.println("✅ Default admin created: username=admin, password=admin");
             }
         };
     }
